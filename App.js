@@ -1,9 +1,12 @@
 import * as React from 'react';
 import TransactionScreen from './screens/TransactionScreen';
 import SearchScreen from './screens/SearchScreen';
-import { createAppContainer} from 'react-navigation'; 
+import LoginScreen from './screens/Login'
+import { createAppContainer,createSwitchNavigator} from 'react-navigation'; 
 import {createBottomTabNavigator} from 'react-navigation-tabs';
 import {Image} from "react-native";
+
+
 export default class App extends React.Component {
   render() {
     return (
@@ -13,7 +16,7 @@ export default class App extends React.Component {
 }
 
 
-var AppNavigator = createBottomTabNavigator({
+var TabNavigator = createBottomTabNavigator({
   TransactionScreen:{screen:TransactionScreen},
   SearchScreen : {screen:SearchScreen}
 },
@@ -40,6 +43,11 @@ var AppNavigator = createBottomTabNavigator({
     }
 
   })
+})
+
+var AppNavigator = createSwitchNavigator({
+  LoginScreen:{screen:LoginScreen},
+  TabNavigator:{screen:TabNavigator}
 })
 
 const AppContainer = createAppContainer(AppNavigator)
