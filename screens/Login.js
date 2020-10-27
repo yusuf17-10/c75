@@ -45,7 +45,7 @@ export default class LoginScreen extends React.Component{
                     <Image 
                         source={require('../assets/booklogo.jpg')}
                         style = {styles.image}/>
-                    <Text>Wily</Text>
+                    <Text style={styles.text}>Wily</Text>
                 </View>
 
                 <View>
@@ -109,6 +109,10 @@ const styles = StyleSheet.create({
         alignSelf:"center",
         width:100,
         height:60
+    },
+    text:{
+      marginLeft:170,
+      fontSize:50
     }
 
 
